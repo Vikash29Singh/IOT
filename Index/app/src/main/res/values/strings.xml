@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Aqua Manager</string>
+    <string name="data">Data</string>
+    <string name="analysis">Analysis</string>
+</resources>
