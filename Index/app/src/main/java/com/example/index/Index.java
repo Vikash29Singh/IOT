@@ -25,7 +25,7 @@ public class Index extends AppCompatActivity {
         //Animation myanim = AnimationUtils.loadAnimation(this,R.anim.mytransition);
         tv.startAnimation(ud);
         iv.startAnimation(du);
-        final Intent i = new Intent(this, Index2.class);
+        final Intent i = new Intent(this, Login.class);
         Thread timer = new Thread() {
             public void run () {
                 try {

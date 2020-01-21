@@ -89,7 +89,9 @@ public class Index2 extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                System.exit(0);
+                               finish();
+                               System.exit(0);
+
                                 finish();
                             }
                         })
