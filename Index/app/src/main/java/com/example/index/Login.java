@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Login extends AppCompatActivity {
     EditText password, email;
     Button sign;
-    ProgressDialog progressBar;
+   // ProgressDialog progressBar;
     int count=0,count1=3;
 
     @Override
@@ -24,6 +25,10 @@ public class Login extends AppCompatActivity {
         email = (EditText) findViewById(R.id.email_id);
 
         sign=(Button)findViewById(R.id.sign);
+
+       // final ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.simpleProgressBar);
+
+
 
 
 
@@ -45,7 +50,7 @@ public class Login extends AppCompatActivity {
             Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(Login.this, Index2.class);
-
+            //simpleProgressBar.setVisibility(View.VISIBLE);
 
            intent.putExtra("Name", email.getText().toString());
             startActivity(intent);
