@@ -101,7 +101,19 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+       <!-- <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_marginTop="20dp"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            />
+-->
     </LinearLayout>
+
+
+
    <!-- <ProgressBar
         android:id="@+id/pBar"
         style="?android:attr/progressBarStyleLarge"

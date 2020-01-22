@@ -35,6 +35,21 @@ public class Index2 extends AppCompatActivity {
 
     }
 
+    public void setProgressDialog()
+    {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.show();
+        progressDialog.setContentView(R.layout.progress_dialog);
+        //set Trasparent background
+        progressDialog.setIndeterminate(true);
+        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+    }
+
+    @Override
+    public void onBackPressed() {
+         progressDialog.dismiss();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.dashboard,menu);
@@ -50,7 +65,8 @@ public class Index2 extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.action_data:
-                builder = new AlertDialog.Builder(this);
+                setProgressDialog();
+                /*builder = new AlertDialog.Builder(this);
                 builder.setTitle("Server Down ")
                         .setIcon(R.drawable.alerticon)
                         .setMessage("Please try letter..")
@@ -64,7 +80,7 @@ public class Index2 extends AppCompatActivity {
                         });
 
                 AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                alertDialog.show();*/
 
                 Toast.makeText(this, "Server Down\nPlease try letter", Toast.LENGTH_SHORT).show();
 
