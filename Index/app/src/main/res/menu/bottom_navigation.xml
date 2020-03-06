@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ph"
+        android:icon="@drawable/ph_value"
+        android:title="ph" />
+
+    <item
+        android:id="@+id/temperature"
+        android:icon="@drawable/temperature_value"
+        android:title="Temperature" />
+
+    <item
+        android:id="@+id/feeder"
+        android:icon="@drawable/food_24dp"
+        android:title="Feeder" />
+
+   <!-- <item
+        android:id="@+id/car"
+        android:icon="@drawable/ic_directions_car_black_24dp"
+        android:title="Car" />-->
+
+
+</menu>

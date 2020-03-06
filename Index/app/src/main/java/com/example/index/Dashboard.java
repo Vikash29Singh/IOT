@@ -4,25 +4,31 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-public class Index2 extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class Dashboard extends AppCompatActivity {
     EditText password, email;
     Button sign;
     //ProgressDialog progressBar;
     //int count=0,count1=3;
     AlertDialog.Builder builder;
     ProgressDialog progressDialog;
+    CardView data, graph, feeder;
+
+    FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener authStateListener;
+
 
 
     @Override
@@ -30,7 +36,23 @@ public class Index2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index2);
 
+        data = findViewById(R.id.data);
+        graph = findViewById(R.id.graph);
+        feeder = findViewById(R.id.feeder);
 
+        data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Datacollection.class));
+            }
+        });
+
+        feeder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Feeder.class));
+            }
+        });
 
 
     }
@@ -74,7 +96,7 @@ public class Index2 extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(Index2.this,Index2.class));
+                                startActivity(new Intent(Dashboard.this,Dashboard.class));
                                 finish();
                             }
                         });
@@ -94,7 +116,7 @@ public class Index2 extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                startActivity(new Intent(Index2.this,Index2.class));
+                                startActivity(new Intent(Dashboard.this, Dashboard.class));
                                 finish();
                             }
                         });
@@ -113,10 +135,17 @@ public class Index2 extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                               finish();
-                               System.exit(0);
+                              /* finish();
 
+
+                                finish();*/
+
+                                FirebaseAuth.getInstance().signOut();
+                                Intent I = new Intent(Dashboard.this, Login.class);
+                                startActivity(I);
+                                //System.exit(0);
                                 finish();
+
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {

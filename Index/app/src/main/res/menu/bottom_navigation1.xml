@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/today"
+        android:icon="@drawable/time_today"
+        android:title="Current Status" />
+
+    <item
+        android:id="@+id/yesterday"
+        android:icon="@drawable/time_yesterday"
+        android:title="Yesterday" />
+
+    <item
+        android:id="@+id/feeder"
+        android:icon="@drawable/food_24dp"
+        android:title="Feed" />
+</menu>

@@ -22,7 +22,7 @@
         android:icon="@drawable/logout"
         android:title="Logout"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         />
 
 

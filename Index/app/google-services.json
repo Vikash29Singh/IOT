@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "215039290584",
+    "firebase_url": "https://aqua-manager.firebaseio.com",
+    "project_id": "aqua-manager",
+    "storage_bucket": "aqua-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215039290584:android:b4365dfd0e6be920b5fbad",
+        "android_client_info": {
+          "package_name": "com.example.index"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215039290584-f1rb42eifvr3p9sc2r3bgqeoo274m1m5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.index",
+            "certificate_hash": "15a29ff77755fbc1ee55aab54f9e1047a1cc9ba1"
+          }
+        },
+        {
+          "client_id": "215039290584-6e5i473id35ubsmntp1p4a8qa9rljqia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmynJOWM9o5yGdlViQMUC0fIf5x5IcYuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215039290584-6e5i473id35ubsmntp1p4a8qa9rljqia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
