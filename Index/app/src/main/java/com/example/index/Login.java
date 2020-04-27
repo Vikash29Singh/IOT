@@ -1,5 +1,6 @@
 package com.example.index;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
     EditText password, email;
     Button sign;
-   // ProgressDialog progressBar;
-    int count=0,count1=3;
+    ProgressDialog mProgress;
+    int count = 0, count1 = 3;
 
     AlertDialog.Builder builder;
     FirebaseAuth firebaseAuth;
@@ -39,10 +40,15 @@ public class Login extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
         email = (EditText) findViewById(R.id.email_id);
 
-        sign=(Button)findViewById(R.id.sign);
+        sign = (Button) findViewById(R.id.sign);
 
-       // final ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.simpleProgressBar);
-
+        // final ProgressBar simpleProgressBar = (ProgressBar) findViewById(R.id.simpleProgressBar);
+//progress bar
+        mProgress = new ProgressDialog(Login.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+        mProgress.setIndeterminate(true);
+        //mProgress.setTitle("Processing...");
+        mProgress.setMessage("Authenticating");
+        mProgress.setCancelable(false);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -60,6 +66,7 @@ public class Login extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mProgress.show();
                 String userEmail = email.getText().toString();
                 String userPaswd = password.getText().toString();
                 if (userEmail.isEmpty()) {
@@ -76,7 +83,7 @@ public class Login extends AppCompatActivity {
                         public void onComplete(@NonNull Task task) {
                             if (!task.isSuccessful()) {
                                 //Toast.makeText(getApplicationContext(), "Not sucessfull", Toast.LENGTH_SHORT).show();
-
+                                mProgress.dismiss();
                                 builder = new AlertDialog.Builder(Login.this);
                                 builder.setTitle("Alert")
                                         .setIcon(R.drawable.alerticon)
@@ -104,6 +111,7 @@ public class Login extends AppCompatActivity {
 
                                 Toast.makeText(getApplicationContext(), "Not sucessfull", Toast.LENGTH_SHORT).show();
                             } else {
+                                mProgress.dismiss();
                                 startActivity(new Intent(getApplicationContext(), Dashboard.class));
                             }
                         }
@@ -135,7 +143,7 @@ public class Login extends AppCompatActivity {
         intent.putExtra("Name", email.getText().toString());
         startActivity(intent);*//*
 
-        *//*count=count+1;
+     *//*count=count+1;
         count1=count1-1;*//*
        // Toast.makeText(Login.this, email.getText().toString(), Toast.LENGTH_SHORT).show();
 
